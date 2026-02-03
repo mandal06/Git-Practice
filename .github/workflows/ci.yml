@@ -1,14 +1,33 @@
-name: CI Day-1 Hello
+name: CI Day-2 Build Test Artifact
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
-  hello-job:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello
-        run: echo "Hello CI/CD 🚀"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build step
+        run: |
+          echo "Building project..."
+          chmod +x hello.sh
+
+      - name: Test step
+        run: |
+          echo "Running test..."
+          ./hello.sh
+
+      - name: Create artifact
+        run: |
+          mkdir output
+          echo "Build successful" > output/result.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-result
+          path: output/result.txt
+
