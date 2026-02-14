@@ -1,6 +1,9 @@
-name: CI Day-2 Build Test Artifact
+name: CI practice  Build Test Artifact
 
-on: push
+on: 
+  push:
+    brances:
+      - main
 
 jobs:
   build-test:
