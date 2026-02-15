@@ -1,0 +1,10 @@
+name: CI Day-1 Hello
+
+on: push
+
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello CI/CD 🚀"
