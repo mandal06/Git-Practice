@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: CI Day-1 Hello
+=======
+name: CI Day-1 but 2nd time practice Hello
+>>>>>>> dev
 
 on:
   push:
