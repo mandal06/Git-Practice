@@ -4,6 +4,9 @@ FROM python:3.11-slim
 # Container এর ভিতরে working directory
 WORKDIR /app
 
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
 # Local সব file container এ copy করবে
 COPY . .
 
