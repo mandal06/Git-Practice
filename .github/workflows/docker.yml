@@ -1,4 +1,4 @@
-name: Docker CI Pipeline
+name: Docker CI/CD Pipeline
 
 on:
   push:
@@ -35,3 +35,4 @@ jobs:
             sudo docker stop cicd-container || true
             sudo docker rm cicd-container || true
             sudo docker run -d --name cicd-container -p 5000:5000 ${{ secrets.DOCKER_USERNAME }}/cicd-day4:latest
+
